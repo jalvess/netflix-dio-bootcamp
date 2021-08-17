@@ -8,3 +8,12 @@
         width: 200px;
     }
 }
+
+@media screen and (min-width:701px) {
+    header .container{
+        max-width: 95%;
+    }
+    header nav a{
+        margin-left: 10px;
+    }
+}

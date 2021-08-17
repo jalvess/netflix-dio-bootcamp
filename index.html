@@ -14,7 +14,7 @@
 <body>
     <header>
         <div class="container">
-            <h2 class="logo">Netflix</h2>
+            <h2 class="logo logo-vermelho">Netflix</h2>
             <nav>
                 <a href="http://">Início</a>
                 <a href="http://">Séries</a>
@@ -37,24 +37,60 @@
         </div>
 
     </main>
-    <div class="carrosel-filmes">
+    <div class="carrosel-filmes container">
+        <h3>Adicionados</h3>
         <div class="owl-carousel owl-theme">
-            <div class="item"><img src="img/min01.jpg" alt=""></div>
-            <div class="item"><img src="img/min02.jpg" alt=""></div>
-            <div class="item"><img src="img/min03.jpg" alt=""></div>
-            <div class="item"><img src="img/min04.jpg" alt=""></div>
-            <div class="item"><img src="img/min05.jpg" alt=""></div>
-            <div class="item"><img src="img/min06.jpg" alt=""></div>
-            <div class="item"><img src="img/min07.jpg" alt=""></div>
-            <div class="item"><img src="img/min08.jpg" alt=""></div>
-            <div class="item"><img src="img/min09.jpg" alt=""></div>
-            <div class="item"><img src="img/min10.jpg" alt=""></div>
+            <div class="item" meta-descricao="Os supervilões Harley Quinn (Margot Robbie), Bloodsport (Idris Elba), Peacemaker (John Cena) e uma coleção de malucos condenados da prisão de Belle Reve juntam-se à super-secreta e super-obscura Força Tarefa X, enquanto são deixados na remota ilha de Corto Maltese para combater o inimigo."><img src="img/min01.jpg" alt="imagem do filme O Esquadrão Suicida" ></div>
+            <div class="item" meta-descricao="O destemido capitão Frank Wolff e a intrépida pesquisadora Lily Houghton se aventuram pela Amazônia a bordo da peculiar embarcação La Quila. Determinados a encontrar uma árvore cujos poderes de cura podem mudar o futuro da medicina, nem mesmo as águas perigosas e as forças sobrenaturais que enfrentam pelo caminho poderão detê-los. Mas os riscos aumentam ainda mais conforme os segredos da árvore se revelam, e o destino de Lily e Frank – e também de toda a humanidade – está em jogo.           "><img src="img/min02.jpg" alt=""></div>
+            <div class="item" meta-descricao="O superastro do basquete LeBron James se junta à gangue Looney Tunes para derrotar o Goon Squad e salvar seu filho.
+
+            "><img src="img/min03.jpg" alt=""></div>
+            <div class="item" meta-descricao="Dominic Toretto e sua família precisam enfrentar o seu irmão mais novo Jakob, um assassino mortal que está trabalhando com uma antiga inimiga, a cyber-terrorista Cipher.
+
+            "><img src="img/min04.jpg" alt=""></div>
+            <div class="item" meta-descricao="Uma segurança de boate com um transtorno de controle de raiva meio fatal usa um colete revestido por eletrodos para se dar choques e reverter ao estado normal sempre que é tomada por uma fúria homicida. Quando o primeiro homem por quem ela se apaixona na vida é assassinado, sua sede de vingança alimenta uma caçada ao assassino, enquanto a polícia a investiga como principal suspeita.
+
+            "><img src="img/min05.jpg" alt=""></div>
+            <div class="item" meta-descricao="Kenshin é um terrível assassino conhecido como Battosai. Mas quando ele conhece a doce Tomoe Yukishiro, sua história começa a mudar.
+
+            "><img src="img/min06.jpg" alt=""></div>
+            <div class="item" meta-descricao="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+            ><img src="img/min07.jpg" alt=""></div>
+            <div class="item" meta-descricao="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+            ><img src="img/min08.jpg" alt=""></div>
+            <div class="item" meta-descricao="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+            ><img src="img/min09.jpg" alt=""></div>
+            <div class="item" meta-descricao="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+            ><img src="img/min10.jpg" alt=""></div>
         </div>
     </div>
+    <footer class="container">
+        <div class="escolha-tema"> 
+            <h4>Mudar tema</h4>
+            <button class="botao" meta-theme="vermelho" >Vermelho Clássico</button>
+            <button class="botao" meta-theme="branco">A Liberdade é Branca</button>
+            <button class="botao" meta-theme="roxo">O Misterioso Roxo</button>
+        </div>
+    </footer>
     <script src="https://kit.fontawesome.com/62825887a0.js" crossorigin="anonymous"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/owl/owl.carousel.min.js"></script>
     <script src="js/owl/setup.js"></script>
+    <script>
+        $(document).ready(function(){
+           $('[meta-theme]').click(mudarTema);
+        });
+
+        function mudarTema() {
+            var tema = $(this).attr('meta-theme');
+            tema = tema == 'vermelho' ? 'tema-preto' : tema == 'branco' ? 'tema-branco' : 'tema-roxo';
+            $('body').removeClass(function(index,classe) {
+                return classe.match(/tema-.*/g);
+            });
+            $('body').addClass(tema);
+            
+        }
+    </script>
     
 </body>
 </html>
